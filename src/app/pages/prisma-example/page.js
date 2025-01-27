@@ -1,9 +1,9 @@
 import Link from 'next/link'
 
-const HomePage = () => {
+const PrismaExamplePage = () => {
   return (
     <div className='text-center'>
-      <h1 className='text-7xl py-4'>Home Page</h1>
+      <h1 className='text-7xl py-4'>Prisma Example Page</h1>
       <Link
         href='/pages/about'
         className='text-2xl text-sky-600'
@@ -14,4 +14,4 @@ const HomePage = () => {
   )
 }
 
-export default HomePage
+export default PrismaExamplePage
