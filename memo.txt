@@ -1,6 +1,12 @@
 # pnpm install / Мы рекомендуем использовать pnpm в качестве менеджера пакетов, так как он быстрее и эффективнее, чем npm или yarn. (Документация)
 
-- npm install -g pnpm
-- npx create-next-app@latest nextjs-tutorial-1 --use-pnpm
-- pnpm dev
+ - npm install -g pnpm
+ - npx create-next-app@latest nextjs-tutorial-1 --use-pnpm
+ - pnpm dev
 
+# daisyUi - библиотека компонентов для Tailwind CSS
+# Плагин @tailwindcss/typography нужен для спаивания связки daisyUi/tailwindcss
+
+ - pnpm i -D daisyui@latest
+ - pnpm i @tailwindcss/typography
+ - pnpm i -D prettier prettier-plugin-tailwindcss
