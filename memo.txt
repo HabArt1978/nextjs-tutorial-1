@@ -1,0 +1,6 @@
+# pnpm install / Мы рекомендуем использовать pnpm в качестве менеджера пакетов, так как он быстрее и эффективнее, чем npm или yarn. (Документация)
+
+- npm install -g pnpm
+- npx create-next-app@latest nextjs-tutorial-1 --use-pnpm
+- pnpm dev
+
