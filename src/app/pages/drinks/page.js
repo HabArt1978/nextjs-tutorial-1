@@ -1,9 +1,15 @@
 const baseUrl = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a'
 
-const DrinksPage = async () => {
+const fetchDrinks = async () => {
+  await new Promise(resolve => setTimeout(resolve, 1500))
   const response = await fetch(baseUrl)
   const data = await response.json()
-  console.log(data)
+  return data
+}
+
+const DrinksPage = async () => {
+  const dataDrinks = await fetchDrinks()
+  console.log(dataDrinks)
 
   return (
     <div className='text-center'>
