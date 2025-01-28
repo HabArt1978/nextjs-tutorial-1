@@ -1,14 +1,16 @@
 import Link from 'next/link'
 
 const HomePage = () => {
+  console.log(`This is SERVER component`)
+
   return (
     <div className='text-center'>
-      <h1 className='text-7xl py-4'>Home Page</h1>
+      <h1 className='text-4xl pt-16 pb-10'>Next.js tutorial</h1>
       <Link
-        href='/pages/about'
-        className='text-2xl text-sky-600'
+        href='/pages/client'
+        className='btn btn-accent uppercase'
       >
-        about page link
+        get started
       </Link>
     </div>
   )
