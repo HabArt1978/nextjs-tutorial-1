@@ -13,7 +13,7 @@ const DrinksPage = async () => {
 
   return (
     <div className='text-center'>
-      <h1 className='text-4xl pt-16 pb-10'>Drinks page</h1>
+      <h1 className='text-4xl pt-10 pb-10'>Drinks page</h1>
     </div>
   )
 }
