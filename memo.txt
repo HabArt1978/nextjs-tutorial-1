@@ -10,3 +10,27 @@
  - pnpm i -D daisyui@latest
  - pnpm i @tailwindcss/typography
  - pnpm i -D prettier prettier-plugin-tailwindcss
+
+ =================|| dynamic rendering & dynamic routing ||=====================
+
+ Где-то в вашем коде вы использовали API, который использует динамический рендеринг.
+
+Динамические API - это:
+
+Реквизиты params и searchParams, которые передаются страницам, макетам, API метаданных и обработчикам маршрутов.
+cookies(), draftMode() и headers() из next/headers
+В Next 15 эти API стали асинхронными. Подробнее об этом можно прочитать в статье Next.js 15
+
+const SingleDrinkPage = async ({ params }) => {
+  const { id } = await params
+
+  const data = await getSingleDrink(id)
+  console.log(data)
+
+  return (
+    <div className='text-center'>
+      <h1 className='text-4xl pt-10 pb-10'>Single page drink</h1>
+    </div>
+  )
+}
+export default SingleDrinkPage
