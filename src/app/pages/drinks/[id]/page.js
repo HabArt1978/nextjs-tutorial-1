@@ -25,7 +25,7 @@ const SingleDrinkPage = async ({ params }) => {
   return (
     <div className='text-center'>
       <figure className='my-10'>
-        <div className='relative aspect-video'>
+        <div className='relative aspect-video w-full max-w-2xl mx-auto'>
           {/* "требуется "relative" при необходимости измените высоту и ширину */}
           <Image
             src={myImage}
@@ -46,6 +46,20 @@ const SingleDrinkPage = async ({ params }) => {
       >
         back to drinks
       </Link>
+
+      <figure className='my-10'>
+        <Image
+          src={imgSrc}
+          alt='Пример подтягивания изображения со стороннего ресурса'
+          width={300}
+          height={300}
+          className='rounded-lg object-cover shadow-lg mx-auto block'
+          priority
+        />
+        <figcaption className='text-lg'>
+          <strong className='text-base'>Drink:</strong> {title}
+        </figcaption>
+      </figure>
     </div>
   )
 }
