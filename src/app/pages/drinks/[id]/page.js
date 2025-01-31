@@ -1,4 +1,7 @@
+import Image from 'next/image'
 import Link from 'next/link'
+import myImage from './myImageLarge.jpg'
+console.log(myImage)
 
 const url = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i='
 
@@ -21,13 +24,28 @@ const SingleDrinkPage = async ({ params }) => {
 
   return (
     <div className='text-center'>
+      <figure className='my-10'>
+        <div className='relative aspect-video'>
+          {/* "требуется "relative" при необходимости измените высоту и ширину */}
+          <Image
+            src={myImage}
+            alt='Пример резинового изображения'
+            className='rounded-lg object-cover'
+            fill // Растягивает изображение на весь div
+            placeholder='blur' // Показывает размытую версию, пока грузится картинка
+          />
+        </div>
+        <figcaption className='mt-2 text-sm'>
+          Пример статичного резинового изображения
+        </figcaption>
+      </figure>
+
       <Link
         href='/pages/drinks'
         className='btn btn-primary uppercase'
       >
         back to drinks
       </Link>
-      <h1 className='text-4xl pt-10 pb-10'>{title}</h1>
     </div>
   )
 }
