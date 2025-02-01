@@ -1,6 +1,7 @@
 # pnpm install / Мы рекомендуем использовать pnpm в качестве менеджера пакетов, так как он быстрее и эффективнее, чем npm или yarn. (Документация)
 
  - npm install -g pnpm
+ - Run "pnpm self-update" to update.  
  - npx create-next-app@latest nextjs-tutorial-1 --use-pnpm
  - pnpm dev
 
@@ -10,6 +11,8 @@
  - pnpm i -D daisyui@latest
  - pnpm i @tailwindcss/typography
  - pnpm i -D prettier prettier-plugin-tailwindcss
+ - pnpm i -D eslint @eslint/eslintrc eslint-config-next eslint-config-prettier eslint-plugin-prettier
+
 
  =================|| dynamic rendering & dynamic routing ||=====================
 
@@ -20,17 +23,3 @@
 Реквизиты params и searchParams, которые передаются страницам, макетам, API метаданных и обработчикам маршрутов.
 cookies(), draftMode() и headers() из next/headers
 В Next 15 эти API стали асинхронными. Подробнее об этом можно прочитать в статье Next.js 15
-
-const SingleDrinkPage = async ({ params }) => {
-  const { id } = await params
-
-  const data = await getSingleDrink(id)
-  console.log(data)
-
-  return (
-    <div className='text-center'>
-      <h1 className='text-4xl pt-10 pb-10'>Single page drink</h1>
-    </div>
-  )
-}
-export default SingleDrinkPage

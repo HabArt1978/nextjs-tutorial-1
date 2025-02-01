@@ -1,6 +1,6 @@
 'use client'
 
-const error = err => {
+const error = (err) => {
   return <strong>{err.error.message}</strong>
 }
 

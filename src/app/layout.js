@@ -4,22 +4,22 @@ import './globals.css'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
-  subsets: ['latin'],
+  subsets: ['latin']
 })
 
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
-  subsets: ['latin'],
+  subsets: ['latin']
 })
 
 export const metadata = {
   title: 'Next cocktails',
-  description: 'Build awesome stuff with Next.js',
+  description: 'Build awesome stuff with Next.js'
 }
 
 export default function RootLayout({ children }) {
   return (
-    <html lang='en'>
+    <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
           <NavBar />
         </header>
 
-        <main className='max-w-6xl mx-auto'>{children}</main>
+        <main className="mx-auto max-w-6xl">{children}</main>
       </body>
     </html>
   )

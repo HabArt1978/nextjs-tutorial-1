@@ -5,7 +5,7 @@ console.log(myImage)
 
 const url = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i='
 
-const getSingleDrink = async id => {
+const getSingleDrink = async (id) => {
   const response = await fetch(`${url}${id}`)
   if (!response.ok) {
     throw new Error('Failed to fetch a drink ...')
@@ -23,41 +23,41 @@ const SingleDrinkPage = async ({ params }) => {
   const imgSrc = data?.drinks[0]?.strDrinkThumb
 
   return (
-    <div className='text-center'>
-      <figure className='my-10'>
-        <div className='relative aspect-video w-full max-w-2xl mx-auto'>
+    <div className="text-center">
+      <figure className="my-10">
+        <div className="relative mx-auto aspect-video w-full max-w-2xl">
           {/* "требуется "relative" при необходимости измените высоту и ширину */}
           <Image
             src={myImage}
-            alt='Пример резинового изображения'
-            className='rounded-lg object-cover'
+            alt="Пример резинового изображения"
+            className="rounded-lg object-cover"
             fill // Растягивает изображение на весь div
-            placeholder='blur' // Показывает размытую версию, пока грузится картинка
+            placeholder="blur" // Показывает размытую версию, пока грузится картинка
           />
         </div>
-        <figcaption className='mt-2 text-sm'>
+        <figcaption className="mt-2 text-sm">
           Пример статичного резинового изображения
         </figcaption>
       </figure>
 
       <Link
-        href='/pages/drinks'
-        className='btn btn-primary uppercase'
+        href="/pages/drinks"
+        className="btn btn-primary uppercase"
       >
         back to drinks
       </Link>
 
-      <figure className='my-10'>
+      <figure className="my-10">
         <Image
           src={imgSrc}
-          alt='Пример подтягивания изображения со стороннего ресурса'
+          alt="Пример подтягивания изображения со стороннего ресурса"
           width={300}
           height={300}
-          className='rounded-lg object-cover shadow-lg mx-auto block'
+          className="mx-auto block rounded-lg object-cover shadow-lg"
           priority
         />
-        <figcaption className='text-lg'>
-          <strong className='text-base'>Drink:</strong> {title}
+        <figcaption className="text-lg">
+          <strong className="text-base">Drink:</strong> {title}
         </figcaption>
       </figure>
     </div>
