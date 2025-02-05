@@ -9,7 +9,7 @@
 # Плагин @tailwindcss/typography нужен для спаивания связки daisyUi/tailwindcss
 
  - pnpm i -D daisyui@latest
- - pnpm i @tailwindcss/typography
+ - pnpm i -D @tailwindcss/typography
  - pnpm i -D prettier prettier-plugin-tailwindcss
  - pnpm i -D eslint @eslint/eslintrc eslint-config-next eslint-config-prettier eslint-plugin-prettier
 
@@ -41,3 +41,20 @@ pnpm add check-node-version --save-dev
 
 Как это работает?
 Теперь перед pnpm install будет выполняться проверка версии. Если версия не соответствует, установка зависимостей прервется с ошибкой.
+
+=================|| Prisma setup ||=====================
+Сервер Prisma: Автономный компонент инфраструктуры, расположенный поверх вашей базы данных.
+
+ - pnpm add -D prisma
+ - pnpm install @prisma/client
+ - npx prisma init --datasource-provider sqlite
+
+Динамическое использование Prisma Client в Next.js
+
+ - В разработке команда next dev очищает кэш Node.js при выполнении. Это, в свою очередь инициализирует новый экземпляр PrismaClient каждый раз при горячей перезагрузке, который создавая соединение с базой данных.
+Это может быстро исчерпать все соединения с базой данных поскольку каждый экземпляр PrismaClient имеет свой собственный пул соединений.
+ - Используйте функцию фабрики для динамического создания клиентов Prisma на основе конфигураций, специфичных для клиента:
+
+ https://www.prisma.io/docs/guides/other/troubleshooting-orm/help-articles/nextjs-prisma-client-dev-practices#solution
+
+

@@ -1,4 +1,4 @@
-import DrinksList from '@/app/components/DrinksList/DrinksList'
+import DrinksList from '@/components/DrinksList/DrinksList'
 
 const baseUrl = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=b'
 
