@@ -1,6 +1,8 @@
 import navBarLinks from '@/app/_library/forRoutesAndLinks'
 import Link from 'next/link'
 
+import Navigation from './Navigation/Navigation'
+
 const NavBar = () => {
   return (
     <div className="navbar">
@@ -12,18 +14,9 @@ const NavBar = () => {
           daisyUI
         </Link>
       </div>
-      <nav className="navbar-center">
-        <ul className="menu menu-horizontal space-x-3 px-1">
-          {navBarLinks.map((link, id) => (
-            <li
-              className="capitalize"
-              key={link.label + (id + 1)}
-            >
-              <Link href={link.path}>{link.label}</Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
+
+      <Navigation links={navBarLinks} />
+
       <div className="navbar-end">
         <Link
           href="#"

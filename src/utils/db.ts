@@ -1,4 +1,5 @@
 // Динамическое использование Prisma Client в Next.js
+// ЭТО ТОЧКА ИНТЕГРАЦИИ НАШЕГО ПРИЛОЖЕНИЯ С SQLITE
 // https://www.prisma.io/docs/guides/other/troubleshooting-orm/help-articles/nextjs-prisma-client-dev-practices#solution
 
 import { PrismaClient } from '@prisma/client'

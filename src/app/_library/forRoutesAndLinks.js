@@ -11,10 +11,7 @@ const navBarLinks = [
     label: 'client',
     path: '/pages/client'
   },
-  {
-    label: 'query',
-    path: '/pages/query'
-  },
+
   {
     label: 'drinks',
     path: '/pages/drinks'
@@ -26,6 +23,10 @@ const navBarLinks = [
   {
     label: 'sing-in',
     path: '/pages/auth/sing-in'
+  },
+  {
+    label: 'prisma-example',
+    path: '/pages/prisma-example'
   }
 ]
 
