@@ -27,6 +27,10 @@ const navBarLinks = [
   {
     label: 'prisma-example',
     path: '/pages/prisma-example'
+  },
+  {
+    label: 'tasks',
+    path: '/pages/tasks'
   }
 ]
 
