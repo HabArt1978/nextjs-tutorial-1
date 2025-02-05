@@ -9,3 +9,13 @@ datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
 }
+
+model Task {
+  id        String   @id @default(uuid())
+  content   String
+  createdAt DateTime @default(now())
+  completed Boolean  @default(false)
+}
+
+// Делаем миграцию каждый раз когда создаём изменения в схеме Prisma?
+// npx prisma migrate dev --name task model

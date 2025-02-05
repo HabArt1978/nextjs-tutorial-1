@@ -48,6 +48,8 @@ pnpm add check-node-version --save-dev
  - pnpm add -D prisma
  - pnpm install @prisma/client
  - npx prisma init --datasource-provider sqlite
+ - npx prisma migrate dev / npx prisma migrate dev --name task model
+ - npx prisma studio
 
 Динамическое использование Prisma Client в Next.js
 
@@ -57,4 +59,14 @@ pnpm add check-node-version --save-dev
 
  https://www.prisma.io/docs/guides/other/troubleshooting-orm/help-articles/nextjs-prisma-client-dev-practices#solution
 
+ - npx prisma migrate dev // безопасно применяет и отслеживает изменения в структуре базы данных.
 
+ - в новом окне терминала
+
+ - npx prisma studio
+
+ - запустите Prisma Studio, которая является визуальным редактором для вашей базы данных.
+ - http://localhost:5555
+
+Изучите данные в Prisma Studio
+Prisma ORM поставляется со встроенным графическим интерфейсом для просмотра и редактирования данных в вашей базе данных. Вы можете открыть его с помощью следующей команды
