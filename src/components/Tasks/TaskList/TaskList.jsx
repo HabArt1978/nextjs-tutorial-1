@@ -10,12 +10,7 @@ const TaskList = async () => {
   })
 
   if (tasks.length === 0) {
-    return (
-      <>
-        <h1 className="mt-0 text-2xl font-medium">Task list</h1>
-        <h2 className="mt-8 text-lg font-medium">No tasks to show ...</h2>
-      </>
-    )
+    return <h2 className="mt-8 text-lg font-medium">No tasks to show ...</h2>
   }
 
   return (
