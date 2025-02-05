@@ -27,3 +27,11 @@ export const createTask = async (formData) => {
   // используем revalidatePath next/cache для синхронизации данных сервер - клиент
   revalidatePath('/pages/tasks')
 }
+
+export const deleteTask = async (formData) => {
+  const taskId = formData.get('taskId')
+  await prisma.task.delete({
+    where: { id: taskId }
+  })
+  revalidatePath('/pages/tasks')
+}

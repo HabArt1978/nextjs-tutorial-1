@@ -11,10 +11,9 @@ const TaskList = async () => {
 
   return (
     <>
-      <h1 className="mt-0 text-2xl font-medium">Task list</h1>
       <h2 className="text-md mt-8 font-medium">Your tasks</h2>
       <ul className="my-2 space-y-3">
-        {tasks.map((task, idx) => (
+        {tasks.map((task) => (
           <li
             key={task.id}
             className="flex justify-between rounded-lg border-2 px-3 py-3 shadow-lg"

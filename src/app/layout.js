@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata = {
-  title: 'Next cocktails',
+  title: 'Practice Next.js',
   description: 'Build awesome stuff with Next.js'
 }
 
