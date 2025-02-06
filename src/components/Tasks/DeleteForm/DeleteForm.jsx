@@ -10,7 +10,7 @@ const DeleteForm = ({ id }) => {
       />
       <button
         type="submit"
-        className="btn btn-error btn-xs"
+        className="btn btn-error btn-xs uppercase"
       >
         delete
       </button>

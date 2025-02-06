@@ -2,6 +2,7 @@
 
 import prisma from '@/utils/db'
 import { revalidatePath } from 'next/cache'
+import { redirect } from 'next/navigation'
 
 export const getAllTasks = async () => {
   return await prisma.task.findMany({
@@ -34,4 +35,29 @@ export const deleteTask = async (formData) => {
     where: { id: taskId }
   })
   revalidatePath('/pages/tasks')
+}
+
+export const getTask = async (taskId) => {
+  return await prisma.task.findUnique({
+    where: { id: taskId }
+  })
+}
+
+export const updateTask = async (formData) => {
+  const id = formData.get('taskId')
+  const content = formData.get('taskContent')
+  const completed = formData.get('completed')
+
+  console.log(formData)
+
+  await prisma.task.update({
+    where: {
+      id
+    },
+    data: {
+      content,
+      completed: completed === 'on' ? true : false
+    }
+  })
+  redirect('/pages/tasks')
 }
