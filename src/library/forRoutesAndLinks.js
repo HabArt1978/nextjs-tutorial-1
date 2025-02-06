@@ -31,6 +31,10 @@ const navBarLinks = [
   {
     label: 'tasks',
     path: '/pages/tasks'
+  },
+  {
+    label: 'client side tasks',
+    path: '/pages/client-side-tasks'
   }
 ]
 

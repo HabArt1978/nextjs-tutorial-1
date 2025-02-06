@@ -1,4 +1,4 @@
-import navBarLinks from '@/app/_library/forRoutesAndLinks'
+import navBarLinks from '@/library/forRoutesAndLinks'
 import Link from 'next/link'
 
 import Navigation from './Navigation/Navigation'

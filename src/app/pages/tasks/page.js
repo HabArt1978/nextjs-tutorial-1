@@ -7,6 +7,13 @@ const Tasks = () => {
       <h1 className="mb-10 text-2xl font-medium">Task list</h1>
       <TaskForm />
       <TaskList />
+
+      <div className="divider"></div>
+
+      <p>
+        This page works only on SSR, any practices that improve user interaction
+        on the client side are not available{' '}
+      </p>
     </section>
   )
 }
