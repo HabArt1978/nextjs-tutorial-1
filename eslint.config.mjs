@@ -11,13 +11,31 @@ const compat = new FlatCompat({
 })
 
 const eslintConfig = [
-  ...compat.extends('next/core-web-vitals', 'next/typescript', 'prettier'),
+  ...compat.extends(
+    'next/core-web-vitals',
+    'next/typescript',
+    'prettier',
+    'plugin:prettier/recommended'
+  ),
   {
     plugins: {
       prettier: prettierPlugin
     },
     rules: {
-      'prettier/prettier': 'error'
+      'prettier/prettier': [
+        'error',
+        {
+          semi: false,
+          useTabs: false,
+          tabWidth: 2,
+          singleQuote: true,
+          bracketSpacing: true,
+          printWidth: 80,
+          trailingComma: 'none',
+          endOfLine: 'auto',
+          singleAttributePerLine: true
+        }
+      ]
     }
   }
 ]
