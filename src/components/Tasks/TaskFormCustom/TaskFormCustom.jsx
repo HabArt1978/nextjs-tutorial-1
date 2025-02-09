@@ -1,8 +1,14 @@
 'use client'
 
 import { createTaskCustom } from '@/utils/actions'
+import { useActionState } from 'react'
 import { useFormStatus } from 'react-dom'
 import { GoTasklist } from 'react-icons/go'
+
+//! useFormState устарел
+// ? useActionState это хук, который позволяет обновлять состояние на основе результата действия формы.
+//** import { useActionState } from "react";
+// В более ранних версиях React Canary этот API был частью React DOM и назывался useFormState
 
 const SubmitButton = () => {
   const { pending } = useFormStatus()
@@ -30,9 +36,16 @@ const SubmitButton = () => {
   )
 }
 
+const initState = {
+  message: null
+}
+
 const TaskFormCustom = () => {
+  const [state, formAction] = useActionState(createTaskCustom, initState)
+
   return (
-    <form action={createTaskCustom}>
+    <form action={formAction}>
+      {state.message ? <p className="mb-2">{state.message}</p> : null}
       <div className="join flex w-full">
         <input
           type="text"
