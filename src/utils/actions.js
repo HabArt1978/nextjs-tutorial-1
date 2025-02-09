@@ -1,5 +1,6 @@
 'use server'
 
+import { TaskSchema } from '@/library/zodSchemas'
 import prisma from '@/utils/db'
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
@@ -34,6 +35,7 @@ export const createTaskCustom = async (prevState, formData) => {
   const taskDescription = formData.get('taskDescription')
 
   try {
+    TaskSchema.parse({ taskDescription })
     await prisma.task.create({
       data: {
         content: taskDescription
@@ -44,6 +46,7 @@ export const createTaskCustom = async (prevState, formData) => {
 
     return { message: 'task created !!!' }
   } catch (error) {
+    console.log(error)
     return { errObj: error, message: 'error...' }
   }
 }
