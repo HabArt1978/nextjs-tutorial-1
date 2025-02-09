@@ -1,4 +1,20 @@
+'use client'
+
 import { deleteTask } from '@/utils/actions'
+import { useFormStatus } from 'react-dom'
+
+const SubmitButton = () => {
+  const { pending } = useFormStatus()
+
+  return (
+    <button
+      type="submit"
+      className="btn btn-error btn-xs uppercase"
+    >
+      {pending ? 'wait...' : 'delete'}
+    </button>
+  )
+}
 
 const DeleteForm = ({ id }) => {
   return (
@@ -8,12 +24,8 @@ const DeleteForm = ({ id }) => {
         name="taskId"
         value={id}
       />
-      <button
-        type="submit"
-        className="btn btn-error btn-xs uppercase"
-      >
-        delete
-      </button>
+
+      <SubmitButton />
     </form>
   )
 }

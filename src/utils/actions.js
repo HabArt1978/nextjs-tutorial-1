@@ -31,7 +31,8 @@ export const createTask = async (formData) => {
 }
 
 export const createTaskCustom = async (prevState, formData) => {
-  // await new Promise((resolve) => setTimeout(resolve, 1000))
+  await new Promise((resolve) => setTimeout(resolve, 500))
+
   const taskDescription = formData.get('taskDescription')
 
   try {
@@ -52,6 +53,8 @@ export const createTaskCustom = async (prevState, formData) => {
 }
 
 export const deleteTask = async (formData) => {
+  await new Promise((resolve) => setTimeout(resolve, 500))
+
   const taskId = formData.get('taskId')
   await prisma.task.delete({
     where: { id: taskId }
