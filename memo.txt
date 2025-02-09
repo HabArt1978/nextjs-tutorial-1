@@ -75,4 +75,10 @@ Prisma ORM поставляется со встроенным графическ
 
 
 =================|| Zod setup ||=====================
+
  - pnpm add zod
+
+=================|| React Hot Toast setup ||=====================
+Горячие уведомления React.
+
+ - pnpm add react-hot-toast

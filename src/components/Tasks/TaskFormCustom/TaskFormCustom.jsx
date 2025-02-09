@@ -1,8 +1,9 @@
 'use client'
 
 import { createTaskCustom } from '@/utils/actions'
-import { useActionState } from 'react'
+import { useActionState, useEffect } from 'react'
 import { useFormStatus } from 'react-dom'
+import toast from 'react-hot-toast'
 import { GoTasklist } from 'react-icons/go'
 
 //! useFormState устарел
@@ -42,6 +43,16 @@ const initState = {
 
 const TaskFormCustom = () => {
   const [state, formAction] = useActionState(createTaskCustom, initState)
+
+  useEffect(() => {
+    if (state.message === 'error') {
+      toast.error('there was an error')
+      return
+    }
+    if (state.message === 'success') {
+      toast.success('task created')
+    }
+  }, [state])
 
   return (
     <form action={formAction}>

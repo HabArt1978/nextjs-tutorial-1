@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from 'next/font/google'
 import NavBar from '../components/NavBar/NavBar'
 import './globals.css'
+import ToastProviders from './providers'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -27,7 +28,9 @@ export default function RootLayout({ children }) {
           <NavBar />
         </header>
 
-        <main className="mx-auto max-w-6xl">{children}</main>
+        <main className="mx-auto max-w-6xl">
+          <ToastProviders>{children}</ToastProviders>
+        </main>
       </body>
     </html>
   )
