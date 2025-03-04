@@ -11,7 +11,11 @@ const ClientSideTasks = () => {
 
       <div className="divider"></div>
 
-      <p>{`"use client"`}</p>
+      <p>
+        This page works with “use client”, when the client takes an action (
+        clicks on a button ), we implement a better user experience, let the
+        user see that their action is in processing mode.
+      </p>
     </section>
   )
 }
