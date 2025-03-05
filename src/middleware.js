@@ -1,9 +1,10 @@
 import { NextResponse } from 'next/server'
 
-export function middleware() {
-  return NextResponse.json({ msg: 'Hello There' }) // Вывод на страницу браузера, если вернуть строку в console.log() получим сообщение в консоли редактора.
+export function middleware(request) {
+  console.log('!!! REQUEST URL !!! :', request.url)
+  return NextResponse.redirect(new URL('/pages/auth/sing-in', request.url)) // указываем страницу для перехода если условие заданное в config.matcher совпадает с request.url.
 }
 
 export const config = {
-  matcher: '/pages/about' // выводит данное сообщение для определённой страницы, обрати внимание для пути /about нет pages/js
+  matcher: ['/pages/tasks/:path*', '/pages/client-side-tasks/:path*'] // Если мы попытаемся перейти на страницу с задачами нас перебросит на страницу авторизации. Таким образом защищаем route.
 }
