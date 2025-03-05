@@ -1,21 +1,22 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "mongodb"
   url      = env("DATABASE_URL")
 }
 
 model Task {
-  id        String   @id @default(uuid())
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  completed Boolean  @default(false)
   content   String
   createdAt DateTime @default(now())
-  completed Boolean  @default(false)
 }
 
 // Делаем миграцию каждый раз когда создаём изменения в схеме Prisma?
 // npx prisma migrate dev --name task model
+
+// После внесения изменений в schema.prisma, выполните команду:
+// npx prisma generate
+// Это обновит клиент Prisma в соответствии с вашей текущей схемой.

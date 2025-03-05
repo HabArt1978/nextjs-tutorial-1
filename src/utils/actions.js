@@ -18,8 +18,9 @@ export const createTask = async (formData) => {
 
   const taskDescription = formData.get('taskDescription')
   // action предоставляет метод get() для получения данных полей формы по name
-  console.log(taskDescription)
+
   // получим данные поля input в терминале сервера
+
   await prisma.task.create({
     data: {
       content: taskDescription
@@ -34,6 +35,8 @@ export const createTaskCustom = async (prevState, formData) => {
   await new Promise((resolve) => setTimeout(resolve, 500))
 
   const taskDescription = formData.get('taskDescription')
+
+  console.log(taskDescription)
 
   try {
     TaskSchema.parse({ taskDescription })
