@@ -1,6 +1,11 @@
 import TaskFormCustom from '@/components/Tasks/TaskFormCustom/TaskFormCustom'
 import { TaskList } from '@/components/Tasks/TaskList/TaskList'
 
+// Измените динамическое поведение макета или страницы на полностью статическое или полностью динамическое.
+// export const dynamic = 'auto'
+// 'auto' | 'force-dynamic' | 'error' | 'force-static'
+export const dynamic = 'force-dynamic'
+
 const ClientSideTasks = () => {
   return (
     <section className="mx-auto mt-10 flex max-w-[50%] flex-col text-center">
