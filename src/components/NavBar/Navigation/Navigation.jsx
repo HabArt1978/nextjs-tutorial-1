@@ -18,7 +18,7 @@ const Navigation = ({ links }) => {
             >
               <Link
                 href={link.path}
-                className={isActiveLink ? 'text-orange-500' : ''}
+                className={`btn btn-ghost transition-colors duration-300 hover:text-orange-500 ${isActiveLink ? 'text-orange-500' : ''}`}
               >
                 {link.label}
               </Link>

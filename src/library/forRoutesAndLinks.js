@@ -21,8 +21,12 @@ const navBarLinks = [
     path: '/pages/auth'
   },
   {
-    label: 'sing-in',
-    path: '/pages/auth/sing-in'
+    label: 'sign-in',
+    path: '/pages/auth/sign-in'
+  },
+  {
+    label: 'sign-up',
+    path: '/pages/authOne/sign-up'
   },
   {
     label: 'prisma-example',

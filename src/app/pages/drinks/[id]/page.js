@@ -31,6 +31,7 @@ const SingleDrinkPage = async ({ params }) => {
             src={myImage}
             alt="Пример резинового изображения"
             className="rounded-lg object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             fill // Растягивает изображение на весь div
             placeholder="blur" // Показывает размытую версию, пока грузится картинка
           />
